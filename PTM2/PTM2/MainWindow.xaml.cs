@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTM2.equipment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace PTM2
         public MainWindow()
         {
             InitializeComponent();
+            
+            
         }
     }
 }
