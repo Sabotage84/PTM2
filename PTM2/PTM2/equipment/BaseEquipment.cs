@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTM2.equipment
 {
-    class BaseEquipment
+    class BaseEquipment : IComparable
     {
         string preName;
 
@@ -48,6 +48,17 @@ namespace PTM2.equipment
             hashCode = hashCode * -1521134295 + inPrise.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(description);
             return hashCode;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            BaseEquipment otherEq = obj as BaseEquipment;
+            if (otherEq != null)
+                return this.FullName.CompareTo(otherEq.FullName);
+            else
+                throw new ArgumentException("Object is not a equipment");
         }
     }
 }
