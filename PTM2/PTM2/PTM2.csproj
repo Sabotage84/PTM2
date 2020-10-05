@@ -66,6 +66,7 @@
     <Compile Include="equipment\BaseEquipment.cs" />
     <Compile Include="equipment\BaseEquipments.cs" />
     <Compile Include="equipment\Server.cs" />
+    <Compile Include="equipment\ServerRus.cs" />
     <Compile Include="equipment\uschv.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
