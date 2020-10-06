@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTM2.equipment
 {
-    class BaseEquipment : IComparable
+    public class BaseEquipment : IComparable
     {
         string preName;
 
@@ -20,11 +20,12 @@ namespace PTM2.equipment
         public double K { get => k; set => k = value; }
         public double Price { get
             {
-                return K * inPrise;
+                return K * InPrise;
             }
             }
 
         public string Description { get => description; set => description = value; }
+        public double InPrise { get => inPrise; set => inPrise = value; }
 
         string shortName;
         string fullName;
@@ -45,7 +46,7 @@ namespace PTM2.equipment
             var hashCode = 1327208659;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(preName);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(shortName);
-            hashCode = hashCode * -1521134295 + inPrise.GetHashCode();
+            hashCode = hashCode * -1521134295 + InPrise.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(description);
             return hashCode;
         }

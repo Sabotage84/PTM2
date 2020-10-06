@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 namespace PTM2.equipment
 {
     [Serializable]
-    class BaseEquipments: IEnumerable
+    public class BaseEquipments: IEnumerable
     {
         List<BaseEquipment> eqList = new List<BaseEquipment>();
 
@@ -72,6 +72,13 @@ namespace PTM2.equipment
                 {
 
                     MessageBox.Show("Файл с првйсом не найден!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Server s1 = new Server("Метроном-300/GNS");
+                    s1.Description = "Metr 300";
+                    s1.InPrise = 2250;
+                    Server s2 = new Server("Метроном-200/GNS");
+                    s2.Description = "Metr 200";
+                    s2.InPrise = 1500;
+
                     formatter.Serialize(fs, eqList);
                 }
 

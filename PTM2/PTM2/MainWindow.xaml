@@ -42,14 +42,14 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListView Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="229" Margin="0,0,0,0.2" Grid.Row="1" Grid.RowSpan="8" VerticalAlignment="Bottom" Width="512">
+                    <ListView x:Name="PriceListLV" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="229" Margin="0,0,0,0.2" Grid.Row="1" Grid.RowSpan="8" VerticalAlignment="Bottom" Width="512" ItemsSource="{Binding pr}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=Title}" Width="120">Модель</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Width="200">Описание</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Width="120">Модель</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" Width="200">Описание</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Width="100">Цена</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=Title}" Width="20">К</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Width="70">Вход</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=K}" Width="20">К</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=InPrise}" Width="70">Вход</GridViewColumn>
 
                             </GridView>
                         </ListView.View>

@@ -13,6 +13,9 @@ namespace PTM2.equipment
             PreName = "Сервер точного времени";
             K = coef;
 
+
+
+
         }
     }
 }

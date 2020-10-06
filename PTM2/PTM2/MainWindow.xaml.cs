@@ -24,7 +24,7 @@ namespace PTM2
         public MainWindow()
         {
             InitializeComponent();
-            
+            BaseEquipments pr = BaseEquipments.modulInstance;
             
         }
     }
