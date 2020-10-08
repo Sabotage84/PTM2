@@ -49,8 +49,22 @@
                     <ListView x:Name="PriceListLV" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="229" Margin="0,0,0,0.2" Grid.Row="1" Grid.RowSpan="8" VerticalAlignment="Bottom" Width="512" DataContext="{Binding Source={StaticResource be}}" ItemsSource="{Binding EqList}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Width="120">Модель</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" Width="200">Описание</GridViewColumn>
+                                <GridViewColumn Header="Модель"  Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=FullName}" TextWrapping="Wrap" ></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+
+                                </GridViewColumn>
+                                <GridViewColumn Header="Описание" Width="200">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=Description}" TextWrapping="Wrap" Margin="5"
+                         Foreground="DarkOrange"></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Width="100">Цена</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=K}" Width="20">К</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=InPrise}" Width="70">Вход</GridViewColumn>
