@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PTM2"
+        xmlns:localc="clr-namespace:PTM2.equipment"
         mc:Ignorable="d"
         Title="PrimeTimeManager" Height="450" Width="800">
+    <Window.Resources>
+        <localc:BaseEquipments x:Key="be" />
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*"/>
@@ -42,7 +46,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListView x:Name="PriceListLV" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="229" Margin="0,0,0,0.2" Grid.Row="1" Grid.RowSpan="8" VerticalAlignment="Bottom" Width="512" ItemsSource="{Binding pr}">
+                    <ListView x:Name="PriceListLV" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="229" Margin="0,0,0,0.2" Grid.Row="1" Grid.RowSpan="8" VerticalAlignment="Bottom" Width="512" DataContext="{Binding Source={StaticResource be}}" ItemsSource="{Binding EqList}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=FullName}" Width="120">Модель</GridViewColumn>

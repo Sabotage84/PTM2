@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace PTM2.equipment
 {
+    [XmlInclude(typeof(Server))]
+    [Serializable]
     public class BaseEquipment : IComparable
     {
+        public BaseEquipment()
+        {
+
+        }
+
         string preName;
 
         public string PreName { get => preName; set => preName = value; }
