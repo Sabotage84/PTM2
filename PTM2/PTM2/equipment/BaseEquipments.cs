@@ -48,6 +48,7 @@ namespace PTM2.equipment
         {
 
             eqList.Add(item);
+            NotifyPropertyChanged();
         }
 
         public void RemoveItem(BaseEquipment item)
