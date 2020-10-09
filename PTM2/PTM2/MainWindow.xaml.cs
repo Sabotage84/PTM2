@@ -26,7 +26,9 @@ namespace PTM2
         public MainWindow()
         {
             InitializeComponent();
-            pr = BaseEquipments.modulInstance;
+           
+            pr = BaseEquipments.modulInstance; 
+            this.DataContext = pr;
         }
 
         private void AddToKP_Click(object sender, RoutedEventArgs e)

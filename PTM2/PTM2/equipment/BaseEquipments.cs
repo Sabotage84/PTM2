@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -25,11 +26,12 @@ namespace PTM2.equipment
 
         public static BaseEquipments modulInstance { get { return lazy.Value; } }
 
-        public ObservableCollection<BaseEquipment> EqList { get => eqList; set
+        public ObservableCollection<BaseEquipment> EqList { get => eqList; 
+            set
                 {
                     eqList = value;
                     NotifyPropertyChanged(nameof(EqList));
-            }
+                }
             }
 
         public IEnumerator GetEnumerator()
@@ -45,9 +47,8 @@ namespace PTM2.equipment
 
         public void ADDItem(BaseEquipment item)
         {
-            ObservableCollection<BaseEquipment> eqListTemp = EqList;
-            eqListTemp.Add(item);
-            eqList = eqListTemp;
+
+            eqList.Add(item);
         }
 
         public void RemoveItem(BaseEquipment item)
@@ -76,8 +77,15 @@ namespace PTM2.equipment
 
         }
 
+        private void eqList_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            NotifyPropertyChanged("EqList");
+        }
+
         internal BaseEquipments()
         {
+            eqList.CollectionChanged += eqList_CollectionChanged;
+
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
 
 
