@@ -30,7 +30,6 @@ namespace PTM2.equipment
             set
                 {
                     eqList = value;
-                    NotifyPropertyChanged(nameof(EqList));
                 }
             }
 
