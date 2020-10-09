@@ -21,11 +21,17 @@ namespace PTM2
     /// </summary>
     public partial class MainWindow : Window
     {
+        BaseEquipments pr;
+
         public MainWindow()
         {
             InitializeComponent();
-            BaseEquipments pr = BaseEquipments.modulInstance;
-            
+            pr = BaseEquipments.modulInstance;
+        }
+
+        private void AddToKP_Click(object sender, RoutedEventArgs e)
+        {
+            pr.ADDItem(new Server("Метроном-1000/GNS"));
         }
     }
 }

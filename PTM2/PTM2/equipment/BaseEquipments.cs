@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,25 +14,40 @@ using System.Xml.Serialization;
 namespace PTM2.equipment
 {
     [Serializable]
-    public class BaseEquipments: IEnumerable
+    public class BaseEquipments: IEnumerable, INotifyPropertyChanged
     {
         ObservableCollection<BaseEquipment> eqList = new ObservableCollection<BaseEquipment>();
 
         private static readonly Lazy<BaseEquipments> lazy =
         new Lazy<BaseEquipments>(() => new BaseEquipments());
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public static BaseEquipments modulInstance { get { return lazy.Value; } }
 
-        public ObservableCollection<BaseEquipment> EqList { get => eqList; set => eqList = value; }
+        public ObservableCollection<BaseEquipment> EqList { get => eqList; set
+                {
+                    eqList = value;
+                    NotifyPropertyChanged(nameof(EqList));
+            }
+            }
 
         public IEnumerator GetEnumerator()
         {
             return EqList.GetEnumerator();
         }
 
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
         public void ADDItem(BaseEquipment item)
         {
-            EqList.Add(item);
+            ObservableCollection<BaseEquipment> eqListTemp = EqList;
+            eqListTemp.Add(item);
+            eqList = eqListTemp;
         }
 
         public void RemoveItem(BaseEquipment item)
