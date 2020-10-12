@@ -79,7 +79,7 @@ namespace PTM2.equipment
 
         private void eqList_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            NotifyPropertyChanged("EqList");
+            NotifyPropertyChanged();
         }
 
         internal BaseEquipments()
