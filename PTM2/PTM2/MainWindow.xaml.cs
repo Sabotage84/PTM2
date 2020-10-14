@@ -19,6 +19,8 @@ namespace PTM2
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
         BaseEquipments pr;
@@ -27,7 +29,7 @@ namespace PTM2
         {
             InitializeComponent();
            
-            pr = BaseEquipments.modulInstance; 
+            pr = (BaseEquipments)PriceListLV.DataContext; 
             this.DataContext = pr;
         }
 
