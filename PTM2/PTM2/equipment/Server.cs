@@ -9,9 +9,11 @@ namespace PTM2.equipment
     [Serializable]
     public class Server:BaseEquipment
     {
-        public Server(string sName, double coef = 2.6)
+        public Server(string sName, int inPrice, double coef = 2.6)
         {
             PreName = "Сервер точного времени";
+            ShortName = sName;
+            InPrise = inPrice;
             K = coef;
 
         }

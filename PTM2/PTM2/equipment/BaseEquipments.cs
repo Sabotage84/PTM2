@@ -100,15 +100,37 @@ namespace PTM2.equipment
                 {
 
                     MessageBox.Show("Файл с првйсом не найден!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Server s1 = new Server("Метроном-300/GNS");
+                    Server s1 = new Server("Метроном-300/GNS",2250);
                     s1.Description = "Metr 300";
-                    s1.InPrise = 2250;
+                   
                     ADDItem(s1);
-                    Server s2 = new Server("Метроном-200/GNS");
+                    Server s2 = new Server("Метроном-200/GNS",1500);
                     s2.Description = "Metr 200";
-                    s2.InPrise = 1500;
+                    
                     ADDItem(s2);
                     formatter.Serialize(fs, EqList);
+                }
+
+            }
+        }
+        public void SevePriceList()
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
+
+
+            using (FileStream fs = new FileStream("eq.xml", FileMode.OpenOrCreate))
+            {
+
+                try
+                {
+                    formatter.Serialize(fs, EqList);
+                }
+                catch
+                {
+
+                    MessageBox.Show("Не удалось сохранить файл с прайсом!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    
+                    
                 }
 
             }
