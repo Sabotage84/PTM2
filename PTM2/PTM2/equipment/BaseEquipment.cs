@@ -15,9 +15,6 @@ namespace PTM2.equipment
         {
 
         }
-
-        string preName;
-
         public string PreName { get => preName; set => preName = value; }
         public string ShortName { get => shortName; set => shortName = value; }
         public double K { get => k; set => k = value; }
@@ -25,7 +22,7 @@ namespace PTM2.equipment
         public double InPrise { get => inPrise; set => inPrise = value; }
         public double Price { get => price; set => price = value; }
         public string FullName { get => fullName; set => fullName = value; }
-
+        string preName;
         string shortName;
         string fullName;
         double inPrise;
