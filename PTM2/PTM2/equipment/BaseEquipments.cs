@@ -56,26 +56,7 @@ namespace PTM2.equipment
             EqList.Remove(item);
         }
 
-        public void Save()
-        {
-            XmlSerializer formatter = new XmlSerializer(typeof(List<BaseEquipment>));
-
-
-            using (FileStream fs = new FileStream("eq.xml", FileMode.OpenOrCreate))
-            {
-
-                try
-                {
-                    formatter.Serialize(fs,EqList);
-                }
-                catch
-                {
-                    MessageBox.Show("Не удалось создать файл прайса!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-            }
-
-        }
+        
 
         private void eqList_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -100,11 +81,11 @@ namespace PTM2.equipment
                 {
 
                     MessageBox.Show("Файл с првйсом не найден!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Server s1 = new Server("Метроном-300/GNS",2250);
+                    Server s1 = new Server("СТВ","Метроном-300/GNS",2250);
                     s1.Description = "Metr 300";
                    
                     ADDItem(s1);
-                    Server s2 = new Server("Метроном-200/GNS",1500);
+                    Server s2 = new Server("СТВ","Метроном-200/GNS",1500);
                     s2.Description = "Metr 200";
                     
                     ADDItem(s2);
@@ -120,19 +101,14 @@ namespace PTM2.equipment
 
             using (FileStream fs = new FileStream("eq.xml", FileMode.OpenOrCreate))
             {
-
                 try
                 {
                     formatter.Serialize(fs, EqList);
                 }
                 catch
                 {
-
                     MessageBox.Show("Не удалось сохранить файл с прайсом!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    
-                    
                 }
-
             }
         }
 

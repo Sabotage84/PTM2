@@ -20,20 +20,11 @@ namespace PTM2.equipment
 
         public string PreName { get => preName; set => preName = value; }
         public string ShortName { get => shortName; set => shortName = value; }
-        public string FullName { 
-            get {
-                return PreName + " " + ShortName; 
-            } }
-
         public double K { get => k; set => k = value; }
-        public double Price { get
-            {
-                return K * InPrise;
-            }
-            }
-
         public string Description { get => description; set => description = value; }
         public double InPrise { get => inPrise; set => inPrise = value; }
+        public double Price { get => price; set => price = value; }
+        public string FullName { get => fullName; set => fullName = value; }
 
         string shortName;
         string fullName;

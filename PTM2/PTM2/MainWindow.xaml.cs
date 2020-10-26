@@ -40,7 +40,7 @@ namespace PTM2
 
         private void AddToPriceList_Click(object sender, RoutedEventArgs e)
         {
-            pr.ADDItem(new Server("Метроном-1000/GNS", 10000));
+            pr.ADDItem(new Server("УСЧВ", "Метроном-1000/GNS", 10000));
             pr.SevePriceList();
         }
     }
