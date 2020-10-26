@@ -35,6 +35,11 @@ namespace PTM2
 
         private void AddToKP_Click(object sender, RoutedEventArgs e)
         {
+            
+        }
+
+        private void AddToPriceList_Click(object sender, RoutedEventArgs e)
+        {
             pr.ADDItem(new Server("Метроном-1000/GNS"));
         }
     }
