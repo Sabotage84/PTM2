@@ -15,7 +15,7 @@
         <TextBox x:Name="inPrice_txtbx" HorizontalAlignment="Left" Height="23" Margin="458,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
         <Label x:Name="K_lbl" Content="Коэффициент" HorizontalAlignment="Left" Margin="620,57,0,0" VerticalAlignment="Top" Width="97"/>
         <TextBox x:Name="K_txtbx" HorizontalAlignment="Left" Height="23" Margin="620,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
-        <Button x:Name="AddEq_btn" Content="Добавить" HorizontalAlignment="Left" Margin="160,185,0,0" VerticalAlignment="Top" Width="88" Height="27"/>
+        <Button x:Name="AddEq_btn" Content="Добавить" HorizontalAlignment="Left" Margin="160,185,0,0" VerticalAlignment="Top" Width="88" Height="27" Click="AddEq_btn_Click"/>
         <Button x:Name="CancelAddEq_btn" Content="Отмена" HorizontalAlignment="Left" Margin="312,185,0,0" VerticalAlignment="Top" Width="75" Height="27"/>
 
     </Grid>

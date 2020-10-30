@@ -23,7 +23,8 @@ namespace PTM2
 
     public partial class MainWindow : Window
     {
-        BaseEquipments pr;
+        public BaseEquipments pr;
+        public static Server s;
 
         public MainWindow()
         {
@@ -40,8 +41,11 @@ namespace PTM2
 
         private void AddToPriceList_Click(object sender, RoutedEventArgs e)
         {
-            pr.ADDItem(new Server("УСЧВ", "Метроном-1000/GNS", "IMS system", 10000));
-            
+            //pr.ADDItem(new Server("УСЧВ", "Метроном-1000/GNS", "IMS system", 10000));
+            AddToPriceListWindow w = new AddToPriceListWindow();
+            w.Owner = this;
+            w.ShowDialog();
+            pr.ADDItem(s);
         }
 
         private void SavePriceList_btn_Click(object sender, RoutedEventArgs e)
