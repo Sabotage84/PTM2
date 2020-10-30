@@ -41,7 +41,13 @@ namespace PTM2
         private void AddToPriceList_Click(object sender, RoutedEventArgs e)
         {
             pr.ADDItem(new Server("УСЧВ", "Метроном-1000/GNS", "IMS system", 10000));
-            pr.SevePriceList();
+            
+        }
+
+        private void SavePriceList_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Точно сохраняем?", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                pr.SevePriceList();
         }
     }
 }
