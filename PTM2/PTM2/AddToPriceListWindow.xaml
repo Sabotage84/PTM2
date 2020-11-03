@@ -10,13 +10,13 @@
         <Label x:Name="Name_lbl" Content="Название" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.744,-1.716" Height="30" Width="96"/>
         <TextBox x:Name="Name_txtbx" HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.492,0.11"/>
         <Label x:Name="Description" Content="Описание" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.444,0.927" Width="191"/>
-        <TextBox x:Name="Description_txtbx" HorizontalAlignment="Left" Height="23" Margin="160,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
+        <TextBox x:Name="Description_txtbx" HorizontalAlignment="Left" Height="49" Margin="160,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
         <Label x:Name="inPrice" Content="Цена" HorizontalAlignment="Left" Margin="546,10,0,0" VerticalAlignment="Top" Width="99"/>
         <TextBox x:Name="Price_txtbx" HorizontalAlignment="Left" Height="23" Margin="546,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99"/>
         <Label x:Name="K_lbl" Content="Коэффициент" HorizontalAlignment="Left" Margin="663,10,0,0" VerticalAlignment="Top" Width="97"/>
         <TextBox x:Name="K_txtbx" HorizontalAlignment="Left" Height="23" Margin="663,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
-        <Button x:Name="AddEq_btn" Content="Добавить" HorizontalAlignment="Left" Margin="19,83,0,0" VerticalAlignment="Top" Width="88" Height="27" Click="AddEq_btn_Click"/>
-        <Button x:Name="CancelAddEq_btn" Content="Отмена" HorizontalAlignment="Left" Margin="171,83,0,0" VerticalAlignment="Top" Width="75" Height="27"/>
+        <Button x:Name="AddEq_btn" Content="Добавить" HorizontalAlignment="Left" Margin="8,111,0,0" VerticalAlignment="Top" Width="88" Height="27" Click="AddEq_btn_Click"/>
+        <Button x:Name="CancelAddEq_btn" Content="Отмена" HorizontalAlignment="Left" Margin="160,111,0,0" VerticalAlignment="Top" Width="75" Height="27"/>
         <RadioButton x:Name="fullPrice_rdbtn" GroupName="price" IsChecked="True" Content="Прайс цена" HorizontalAlignment="Left" Margin="420,44,0,0" VerticalAlignment="Top" Checked="fullPrice_rdbtn_Checked" Unchecked="fullPrice_rdbtn_Unchecked"/>
         <RadioButton x:Name="inPrice1" GroupName="price" Content="Входная Цена" HorizontalAlignment="Left" Margin="420,95,0,0" VerticalAlignment="Top" Checked="inPrice1_Checked" Unchecked="inPrice1_Unchecked">
             <RadioButton.BindingGroup>

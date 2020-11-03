@@ -31,11 +31,65 @@ namespace PTM2
         {
             string sName = Name_txtbx.Text;
             string des = Description_txtbx.Text;
-            int p = int.Parse(Price_txtbx.Text);
-            double k = double.Parse(K_txtbx.Text);
+            bool allRight = true;
+            int p=0;
+            double k=0;
+            if (fullPrice_rdbtn.IsChecked==true)
+            {
+                try
+                {
+                    Price_txtbx.BorderBrush = Brushes.Gray;
+                    p = int.Parse(Price_txtbx.Text);
+                }
+                catch (Exception)
+                {
+                    allRight = false;
+                    Price_txtbx.BorderBrush = Brushes.Red;
+                }
+
+                try
+                {
+                    k = double.Parse(K_txtbx.Text);
+                    K_txtbx.BorderBrush = Brushes.Gray;
+                }
+                catch (Exception)
+                {
+                    K_txtbx.BorderBrush = Brushes.Red;
+                    allRight = false;
+                }
+            }
+            if (inPrice1.IsChecked==true)
+            {
+                try
+                {
+                    InPrice_txtbx.BorderBrush = Brushes.Gray;
+                    p = int.Parse(InPrice_txtbx.Text);
+                }
+                catch (Exception)
+                {
+                    allRight = false;
+                    InPrice_txtbx.BorderBrush = Brushes.Red;
+                }
+
+                try
+                {
+                    k = double.Parse(KK.Text);
+                    KK.BorderBrush = Brushes.Gray;
+                }
+                catch (Exception)
+                {
+                    KK.BorderBrush = Brushes.Red;
+                    allRight = false;
+                }
+            }
             
-            MainWindow.s = new Server("", sName, des, p, k);
-            Close();
+            if (allRight)
+            {
+                MainWindow.s = new Server("", sName, des, p, k);
+                Close();
+            }
+            
+            
         }
 
         private void fullPrice_rdbtn_Checked(object sender, RoutedEventArgs e)
