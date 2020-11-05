@@ -1,11 +1,11 @@
-﻿<Window x:Class="PTM2.AddToPriceListWindow"
+﻿<Window x:Name="AddEqWin" x:Class="PTM2.AddToPriceListWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PTM2"
         mc:Ignorable="d"
-        Title="AddToPriceListWindow" Height="179.373" Width="800">
+        Title="Добавить наименование" Height="179.373" Width="800">
     <Grid Margin="0,0,-0.4,1.6">
         <Label x:Name="Name_lbl" Content="Название" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.744,-1.716" Height="30" Width="96"/>
         <TextBox x:Name="Name_txtbx" HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.492,0.11"/>
