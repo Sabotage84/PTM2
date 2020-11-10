@@ -31,8 +31,10 @@ namespace PTM2
         {
             string sName = Name_txtbx.Text;
             string des = Description_txtbx.Text;
+            string offerNum = OfferNumber_txtbx.Text;
             bool allRight = true;
             int p=0;
+            double dp = 0;
             double k=0;
             if (fullPrice_rdbtn.IsChecked==true)
             {
@@ -57,13 +59,18 @@ namespace PTM2
                     K_txtbx.BorderBrush = Brushes.Red;
                     allRight = false;
                 }
+                if (allRight)
+                {
+                    MainWindow.s = new Server("", sName, des, offerNum, p, k);
+                    Close();
+                }
             }
             if (inPrice1.IsChecked==true)
             {
                 try
                 {
                     InPrice_txtbx.BorderBrush = Brushes.Gray;
-                    p = int.Parse(InPrice_txtbx.Text);
+                    dp = double.Parse(InPrice_txtbx.Text);
                 }
                 catch (Exception)
                 {
@@ -81,13 +88,15 @@ namespace PTM2
                     KK.BorderBrush = Brushes.Red;
                     allRight = false;
                 }
+                if (allRight)
+                {
+                    MainWindow.s = new Server("", sName, des, offerNum, dp, k);
+                    Close();
+                }
+
             }
             
-            if (allRight)
-            {
-                MainWindow.s = new Server("", sName, des, p, k);
-                Close();
-            }
+            
             
             
         }

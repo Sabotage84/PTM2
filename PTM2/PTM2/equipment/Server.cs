@@ -9,7 +9,7 @@ namespace PTM2.equipment
     [Serializable]
     public class Server:BaseEquipment
     {
-        public Server(string pre, string sName, string discr, int inPrice, double coef = 2.6)
+        public Server(string pre, string sName, string discr, string offer, int inPrice, double coef = 2.6)
         {
             PreName = pre;
             ShortName = sName;
@@ -20,7 +20,7 @@ namespace PTM2.equipment
             Price = InPrise * K;
 
         }
-        public Server(string pre, string sName, string discr, double price, double coef)
+        public Server(string pre, string sName, string discr, string offer, double price, double coef)
         {
             PreName = pre;
             ShortName = sName;

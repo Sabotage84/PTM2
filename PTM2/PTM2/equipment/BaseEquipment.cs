@@ -22,6 +22,9 @@ namespace PTM2.equipment
         public double InPrise { get => inPrise; set => inPrise = value; }
         public double Price { get => price; set => price = value; }
         public string FullName { get => fullName; set => fullName = value; }
+        public string OfferNum { get => offerNum; set => offerNum = value; }
+
+        string offerNum;
         string preName;
         string shortName;
         string fullName;

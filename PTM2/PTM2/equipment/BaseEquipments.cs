@@ -81,10 +81,10 @@ namespace PTM2.equipment
                 {
 
                     MessageBox.Show("Файл с првйсом не найден!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Server s1 = new Server("СТВ","Метроном-300/GNS","Metr 300" ,2250);
-                    ADDItem(s1);
-                    Server s2 = new Server("СТВ","Метроном-200/GNS","Metr 200" ,1500);
-                    ADDItem(s2);
+                    //Server s1 = new Server("СТВ","Метроном-300/GNS","Metr 300" ,2250);
+                    //ADDItem(s1);
+                    //Server s2 = new Server("СТВ","Метроном-200/GNS","Metr 200" ,1500);
+                    //ADDItem(s2);
                     formatter.Serialize(fs, EqList);
                 }
 
