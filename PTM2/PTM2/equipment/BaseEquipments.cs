@@ -31,7 +31,7 @@ namespace PTM2.equipment
                 {
                     eqList = value;
                 }
-            }
+        }
 
         public IEnumerator GetEnumerator()
         {
@@ -46,7 +46,6 @@ namespace PTM2.equipment
 
         public void ADDItem(BaseEquipment item)
         {
-
             eqList.Add(item);
             NotifyPropertyChanged();
         }
@@ -69,7 +68,6 @@ namespace PTM2.equipment
 
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
 
-
             using (FileStream fs = new FileStream("eq.xml", FileMode.OpenOrCreate))
             {
 
@@ -79,21 +77,14 @@ namespace PTM2.equipment
                 }
                 catch
                 {
-
                     MessageBox.Show("Файл с првйсом не найден!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    //Server s1 = new Server("СТВ","Метроном-300/GNS","Metr 300" ,2250);
-                    //ADDItem(s1);
-                    //Server s2 = new Server("СТВ","Метроном-200/GNS","Metr 200" ,1500);
-                    //ADDItem(s2);
                     formatter.Serialize(fs, EqList);
                 }
-
             }
         }
         public void SevePriceList()
         {
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
-
 
             using (FileStream fs = new FileStream("eq.xml", FileMode.Create))
             {
@@ -107,7 +98,5 @@ namespace PTM2.equipment
                 }
             }
         }
-
-
-        }
+    }
 }

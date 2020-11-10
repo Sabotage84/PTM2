@@ -26,9 +26,9 @@ namespace PTM2.equipment
             ShortName = sName;
             FullName = PreName + ShortName;
             Description = discr;
-            InPrise = price/coef;
+            InPrise = price;
             K = coef;
-            Price = price;
+            Price = price*coef;
 
         }
 
