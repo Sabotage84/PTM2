@@ -53,5 +53,10 @@ namespace PTM2
             if (MessageBox.Show("Точно сохраняем?", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 pr.SevePriceList();
         }
+
+        private void Remove_btn_Click(object sender, RoutedEventArgs e)
+        {
+            pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
+        }
     }
 }
