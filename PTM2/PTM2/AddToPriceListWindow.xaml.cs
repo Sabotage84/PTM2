@@ -125,5 +125,10 @@ namespace PTM2
             InPrice_txtbx.IsEnabled = false;
             KK.IsEnabled = false;
         }
+
+        private void CancelAddEq_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
