@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PTM2"
         mc:Ignorable="d"
-        Title="EditEqWin" Height="342.537" Width="939.925">
+        Title="EditEqWin" Height="193.656" Width="840.298">
     <Grid x:Name="Edit_grid">
         <Label x:Name="EditName_lbl" Content="Название" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.212,0.002"/>
         <TextBox x:Name="EditName_txtbl" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -13,6 +13,14 @@
         <TextBox x:Name="EditOffer_txtbx" HorizontalAlignment="Left" Height="23" Margin="10,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="EditDescr_lbl" Content="Описание" HorizontalAlignment="Left" Margin="166,27,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox x:Name="EditDescr_txtbx" HorizontalAlignment="Left" Height="82" Margin="166,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+        <Label x:Name="EditInPrice_lbl" Content="Вход" HorizontalAlignment="Left" Margin="519,27,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="EditInPrice_txtbx" HorizontalAlignment="Left" Height="23" Margin="519,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" RenderTransformOrigin="-0.166,-2.293"/>
+        <Label x:Name="EditK_lbl" Content="Коэффициент" HorizontalAlignment="Left" Margin="619,27,0,0" VerticalAlignment="Top" Width="86"/>
+        <TextBox x:Name="EditK_txtbx" HorizontalAlignment="Left" Height="23" Margin="619,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="EditPrice_lbl" Content="Цена" HorizontalAlignment="Left" Margin="720,27,0,0" VerticalAlignment="Top" Width="88"/>
+        <TextBox x:Name="EditPrice_txtbx" HorizontalAlignment="Left" Height="23" Margin="720,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88"/>
+        <Button x:Name="SaveEdit_btn" Content="Сохранить" HorizontalAlignment="Left" Margin="619,133,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="CancelEdit_btn" Content="Отмена" HorizontalAlignment="Left" Margin="720,133,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

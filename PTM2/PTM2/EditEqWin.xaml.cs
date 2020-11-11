@@ -17,6 +17,8 @@ namespace PTM2
     /// <summary>
     /// Логика взаимодействия для EditEqWin.xaml
     /// </summary>
+    /// 
+    
     public partial class EditEqWin : Window
     {
         public EditEqWin()

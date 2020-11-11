@@ -58,5 +58,12 @@ namespace PTM2
         {
             pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
         }
+
+        private void EditPricePosition_Click(object sender, RoutedEventArgs e)
+        {
+            EditEqWin w = new EditEqWin();
+            w.ShowDialog();
+            
+        }
     }
 }
