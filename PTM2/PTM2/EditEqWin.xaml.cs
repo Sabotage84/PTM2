@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTM2.equipment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,20 @@ namespace PTM2
     
     public partial class EditEqWin : Window
     {
-        public EditEqWin()
+        
+        public EditEqWin(BaseEquipment item)
         {
             InitializeComponent();
+            if(item!=null)
+            {
+                EditInPrice_txtbx.Text = item.Price.ToString();
+                EditK_txtbx.Text = item.K.ToString();
+                EditName_txtbl.Text = item.FullName;
+                EditOffer_txtbx.Text = item.OfferNum;
+                EditInPrice_txtbx.Text = item.InPrise.ToString();
+                EditDescr_txtbx.Text = item.Description;
+            }
+
         }
     }
 }

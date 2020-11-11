@@ -61,7 +61,8 @@ namespace PTM2
 
         private void EditPricePosition_Click(object sender, RoutedEventArgs e)
         {
-            EditEqWin w = new EditEqWin();
+            EditEqWin w = new EditEqWin((BaseEquipment)PriceListLV.SelectedItem);
+            w.Owner = this;
             w.ShowDialog();
             
         }
