@@ -37,5 +37,25 @@ namespace PTM2
             }
 
         }
+
+        private void SaveEdit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            BaseEquipment t = new BaseEquipment();
+            t.Description = EditDescr_txtbx.Text;
+            t.FullName = EditName_txtbl.Text;
+            t.InPrise = double.Parse(EditInPrice_txtbx.Text);
+            t.K = int.Parse(EditK_txtbx.Text);
+            t.OfferNum = EditOffer_txtbx.Text;
+            t.Price = int.Parse(EditPrice_txtbx.Text);
+            MainWindow.s =t;
+            DialogResult = true;
+            Close();
+        }
+
+        private void CancelEdit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
     }
 }

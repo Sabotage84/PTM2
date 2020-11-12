@@ -24,7 +24,7 @@ namespace PTM2
     public partial class MainWindow : Window
     {
         public BaseEquipments pr;
-        public static Server s;
+        public static BaseEquipment s;
 
         public MainWindow()
         {
@@ -64,7 +64,14 @@ namespace PTM2
             EditEqWin w = new EditEqWin((BaseEquipment)PriceListLV.SelectedItem);
             w.Owner = this;
             w.ShowDialog();
-            
+            if (w.DialogResult==true)
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show("false");
+            }
         }
     }
 }
