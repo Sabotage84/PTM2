@@ -28,7 +28,7 @@ namespace PTM2
             InitializeComponent();
             if(item!=null)
             {
-                EditInPrice_txtbx.Text = item.Price.ToString();
+                EditPrice_txtbx.Text = item.Price.ToString();
                 EditK_txtbx.Text = item.K.ToString();
                 EditName_txtbl.Text = item.FullName;
                 EditOffer_txtbx.Text = item.OfferNum;
