@@ -66,11 +66,8 @@ namespace PTM2
             w.ShowDialog();
             if (w.DialogResult==true)
             {
-                MessageBox.Show("OK");
-            }
-            else
-            {
-                MessageBox.Show("false");
+                pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
+                pr.ADDItem(s);
             }
         }
     }
