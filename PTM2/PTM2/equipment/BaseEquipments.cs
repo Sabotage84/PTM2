@@ -98,5 +98,15 @@ namespace PTM2.equipment
                 }
             }
         }
+        public void Sort()
+        {
+            List<BaseEquipment> t = new List<BaseEquipment>(eqList);
+            t.Sort();
+            EqList.Clear();
+            foreach (var item in t)
+            {
+                EqList.Add(item);
+            }
+        }
     }
 }

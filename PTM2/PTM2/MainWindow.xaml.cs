@@ -68,6 +68,7 @@ namespace PTM2
             {
                 pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
                 pr.ADDItem(s);
+                pr.Sort();
             }
         }
     }
