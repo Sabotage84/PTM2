@@ -85,5 +85,30 @@ namespace PTM2
             DialogResult = false;
             Close();
         }
+
+        private void EditInPrice_txtbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                double t = double.Parse(EditInPrice_txtbx.Text);
+                double k = double.Parse(EditK_txtbx.Text);
+                EditPrice_txtbx.Text = (t * k).ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Входная цена или коэффициент имеют неверное значение!");
+            }
+        }
+
+        private void EditK_txtbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void EditPrice_txtbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
