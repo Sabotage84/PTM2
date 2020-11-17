@@ -91,11 +91,37 @@ namespace PTM2
             CalculatePrice();
         }
 
+        
+
+        private void EditK_txtbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CalculatePrice();
+        }
+
+        private void EditPrice_txtbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                double t, k;
+                if (!(string.IsNullOrEmpty(EditPrice_txtbx.Text) || string.IsNullOrEmpty(EditK_txtbx.Text)))
+                {
+                    t = double.Parse(EditPrice_txtbx.Text);
+                    k = double.Parse(EditK_txtbx.Text);
+                    EditInPrice_txtbx.Text = (t / k).ToString();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Входная цена или коэффициент имеют неверное значение!");
+            }
+        }
+
         private void CalculatePrice()
         {
             try
             {
-                double t,k;
+                double t, k;
                 if (!(string.IsNullOrEmpty(EditInPrice_txtbx.Text) || string.IsNullOrEmpty(EditK_txtbx.Text)))
                 {
                     t = double.Parse(EditInPrice_txtbx.Text);
@@ -108,16 +134,6 @@ namespace PTM2
             {
                 MessageBox.Show("Входная цена или коэффициент имеют неверное значение!");
             }
-        }
-
-        private void EditK_txtbx_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            CalculatePrice();
-        }
-
-        private void EditPrice_txtbx_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
