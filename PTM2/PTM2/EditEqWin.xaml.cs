@@ -88,11 +88,20 @@ namespace PTM2
 
         private void EditInPrice_txtbx_TextChanged(object sender, TextChangedEventArgs e)
         {
+            CalculatePrice();
+        }
+
+        private void CalculatePrice()
+        {
             try
             {
-                double t = double.Parse(EditInPrice_txtbx.Text);
-                double k = double.Parse(EditK_txtbx.Text);
-                EditPrice_txtbx.Text = (t * k).ToString();
+                double t,k;
+                if (!(string.IsNullOrEmpty(EditInPrice_txtbx.Text) || string.IsNullOrEmpty(EditK_txtbx.Text)))
+                {
+                    t = double.Parse(EditInPrice_txtbx.Text);
+                    k = double.Parse(EditK_txtbx.Text);
+                    EditPrice_txtbx.Text = (t * k).ToString();
+                }
 
             }
             catch (Exception)
@@ -103,7 +112,7 @@ namespace PTM2
 
         private void EditK_txtbx_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            CalculatePrice();
         }
 
         private void EditPrice_txtbx_TextChanged(object sender, TextChangedEventArgs e)
