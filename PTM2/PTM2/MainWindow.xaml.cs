@@ -41,11 +41,13 @@ namespace PTM2
 
         private void AddToPriceList_Click(object sender, RoutedEventArgs e)
         {
-            //pr.ADDItem(new Server("УСЧВ", "Метроном-1000/GNS", "IMS system", 10000));
+            
             AddToPriceListWindow w = new AddToPriceListWindow();
             w.Owner = this;
             w.ShowDialog();
             pr.ADDItem(s);
+            pr.Sort();
+
         }
 
         private void SavePriceList_btn_Click(object sender, RoutedEventArgs e)
@@ -57,6 +59,7 @@ namespace PTM2
         private void Remove_btn_Click(object sender, RoutedEventArgs e)
         {
             pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
+            pr.Sort();
         }
 
         private void EditPricePosition_Click(object sender, RoutedEventArgs e)
