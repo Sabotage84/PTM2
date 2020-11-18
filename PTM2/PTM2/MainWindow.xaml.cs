@@ -74,5 +74,10 @@ namespace PTM2
                 pr.Sort();
             }
         }
+
+        private void SearchEq_txtbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            pr.SearchEqByName(SearchEq_txtbx.Text);
+        }
     }
 }

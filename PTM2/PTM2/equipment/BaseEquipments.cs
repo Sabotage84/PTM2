@@ -18,6 +18,8 @@ namespace PTM2.equipment
     public class BaseEquipments: IEnumerable, INotifyPropertyChanged
     {
         ObservableCollection<BaseEquipment> eqList = new ObservableCollection<BaseEquipment>();
+        ObservableCollection<BaseEquipment> defaultList = new ObservableCollection<BaseEquipment>();
+
 
         private static readonly Lazy<BaseEquipments> lazy =
         new Lazy<BaseEquipments>(() => new BaseEquipments());
@@ -32,6 +34,8 @@ namespace PTM2.equipment
                     eqList = value;
                 }
         }
+
+        public ObservableCollection<BaseEquipment> DefaultList { get => defaultList; set => defaultList = value; }
 
         public IEnumerator GetEnumerator()
         {
@@ -74,11 +78,13 @@ namespace PTM2.equipment
                 try
                 {
                     EqList = (ObservableCollection<BaseEquipment>)formatter.Deserialize(fs);
+                    DefaultList = new ObservableCollection<BaseEquipment>(EqList);
+                    //DefaultList = (ObservableCollection<BaseEquipment>)formatter.Deserialize(fs);
                 }
                 catch
                 {
                     MessageBox.Show("Файл с првйсом не найден!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    formatter.Serialize(fs, EqList);
+                    
                 }
             }
         }
@@ -107,6 +113,35 @@ namespace PTM2.equipment
             {
                 EqList.Add(item);
             }
+        }
+
+        public void SearchEqByName(string searchString)
+        {
+            if(string.IsNullOrEmpty(searchString))
+            {
+                EqList.Clear();
+                foreach (var item in DefaultList)
+                {
+                    EqList.Add(item);
+                }
+            }
+            else
+            {
+                List<BaseEquipment> t = new List<BaseEquipment>();
+                foreach (var item in DefaultList)
+                {
+                    if (item.FullName.Contains(searchString))
+                    {
+                        t.Add(item);
+                    }
+                }
+                EqList.Clear();
+                foreach (var item in t)
+                {
+                    EqList.Add(item);
+                }
+            }
+            Sort();
         }
     }
 }
