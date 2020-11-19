@@ -79,5 +79,10 @@ namespace PTM2
         {
             pr.SearchEqByName(SearchEq_txtbx.Text);
         }
+
+        private void ClearSearchString_btn_Click(object sender, RoutedEventArgs e)
+        {
+            SearchEq_txtbx.Text = string.Empty;
+        }
     }
 }

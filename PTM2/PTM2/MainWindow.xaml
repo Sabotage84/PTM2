@@ -89,6 +89,7 @@
                     <Button x:Name="Remove_btn" Grid.ColumnSpan="3" Content="Удалить" Grid.Column="1" HorizontalAlignment="Left" Margin="93,0,0,0" Grid.Row="10" VerticalAlignment="Top" Width="86" Height="29" Click="Remove_btn_Click"/>
                     <Label x:Name="SearchEq_lbl" Content="Поиск: " HorizontalAlignment="Left" Height="29" Margin="17,0,0,0" VerticalAlignment="Top" Width="48"/>
                     <TextBox x:Name="SearchEq_txtbx" HorizontalAlignment="Left" Height="19" Margin="67,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Grid.ColumnSpan="4" TextChanged="SearchEq_txtbx_TextChanged"/>
+                    <Button x:Name="ClearSearchString_btn" Content="X" Grid.Column="3" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="20" Height="19" Click="ClearSearchString_btn_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Счет">
