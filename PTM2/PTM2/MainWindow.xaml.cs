@@ -25,6 +25,7 @@ namespace PTM2
     {
         public BaseEquipments pr;
         public static BaseEquipment s;
+        bool changes = false;
 
         public MainWindow()
         {
@@ -47,19 +48,23 @@ namespace PTM2
             w.ShowDialog();
             pr.ADDItem(s);
             pr.Sort();
-
+            changes = true;
         }
 
         private void SavePriceList_btn_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Точно сохраняем?", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
                 pr.SevePriceList();
+                changes = false;
+            }
         }
 
         private void Remove_btn_Click(object sender, RoutedEventArgs e)
         {
             pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
             pr.Sort();
+            changes = true;
         }
 
         private void EditPricePosition_Click(object sender, RoutedEventArgs e)
@@ -72,7 +77,9 @@ namespace PTM2
                 pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
                 pr.ADDItem(s);
                 pr.Sort();
+                changes = true;
             }
+            
         }
 
         private void SearchEq_txtbx_TextChanged(object sender, TextChangedEventArgs e)
@@ -83,6 +90,18 @@ namespace PTM2
         private void ClearSearchString_btn_Click(object sender, RoutedEventArgs e)
         {
             SearchEq_txtbx.Text = string.Empty;
+        }
+
+        private void Exit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (changes)
+            {
+                if (MessageBox.Show("Сохранить изменения", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    pr.SevePriceList();
+                }
+            }
+            Close();
         }
     }
 }
