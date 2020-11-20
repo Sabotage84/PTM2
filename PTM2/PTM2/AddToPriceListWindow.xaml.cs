@@ -128,6 +128,7 @@ namespace PTM2
 
         private void CancelAddEq_btn_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.s = null;
             Close();
         }
     }

@@ -112,11 +112,18 @@ namespace PTM2.equipment
         public void Sort()
         {
             List<BaseEquipment> t = new List<BaseEquipment>(eqList);
+            List<BaseEquipment> t1 = new List<BaseEquipment>(DefaultList);
             t.Sort();
+            t1.Sort();
             EqList.Clear();
             foreach (var item in t)
             {
                 EqList.Add(item);
+            }
+            DefaultList.Clear();
+            foreach (var item in t1)
+            {
+                DefaultList.Add(item);
             }
         }
 

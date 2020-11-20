@@ -24,7 +24,7 @@ namespace PTM2
     public partial class MainWindow : Window
     {
         public BaseEquipments pr;
-        public static BaseEquipment s;
+        public static BaseEquipment s=null;
         bool changes = false;
 
         public MainWindow()
@@ -46,9 +46,14 @@ namespace PTM2
             AddToPriceListWindow w = new AddToPriceListWindow();
             w.Owner = this;
             w.ShowDialog();
-            pr.ADDItem(s);
-            pr.Sort();
-            changes = true;
+            if (s != null)
+            {
+                pr.ADDItem(s);
+                pr.Sort();
+                changes = true;
+
+            }
+            
         }
 
         private void SavePriceList_btn_Click(object sender, RoutedEventArgs e)
@@ -69,15 +74,23 @@ namespace PTM2
 
         private void EditPricePosition_Click(object sender, RoutedEventArgs e)
         {
-            EditEqWin w = new EditEqWin((BaseEquipment)PriceListLV.SelectedItem);
-            w.Owner = this;
-            w.ShowDialog();
-            if (w.DialogResult==true)
+            BaseEquipment selectedElement = (BaseEquipment)PriceListLV.SelectedItem;
+            if (selectedElement != null)
             {
-                pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
-                pr.ADDItem(s);
-                pr.Sort();
-                changes = true;
+                EditEqWin w = new EditEqWin(selectedElement);
+                w.Owner = this;
+                w.ShowDialog();
+                if (w.DialogResult == true)
+                {
+                    pr.RemoveItem((BaseEquipment)PriceListLV.SelectedItem);
+                    pr.ADDItem(s);
+                    pr.Sort();
+                    changes = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для редактирования!");
             }
             
         }
@@ -96,7 +109,7 @@ namespace PTM2
         {
             if (changes)
             {
-                if (MessageBox.Show("Сохранить изменения", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Сохранить изменения перед выходом?", "Save", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     pr.SevePriceList();
                 }
