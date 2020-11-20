@@ -51,12 +51,14 @@ namespace PTM2.equipment
         public void ADDItem(BaseEquipment item)
         {
             eqList.Add(item);
+            DefaultList.Add(item);
             NotifyPropertyChanged();
         }
 
         public void RemoveItem(BaseEquipment item)
         {
             EqList.Remove(item);
+            DefaultList.Remove(item);
         }
 
         
@@ -96,7 +98,10 @@ namespace PTM2.equipment
             {
                 try
                 {
+                    ObservableCollection<BaseEquipment> t = eqList;
+                    EqList = DefaultList;
                     formatter.Serialize(fs, EqList);
+                    EqList = t;
                 }
                 catch
                 {
