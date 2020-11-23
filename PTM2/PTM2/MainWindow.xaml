@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <TabControl Margin="10,38,10,10" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TabItem Header="Прайс / КП+">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,5,0,-5.4">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="29*"></RowDefinition>
                         <RowDefinition Height="29*"></RowDefinition>
@@ -91,6 +91,25 @@
                     <TextBox x:Name="SearchEq_txtbx" HorizontalAlignment="Left" Height="19" Margin="67,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Grid.ColumnSpan="4" TextChanged="SearchEq_txtbx_TextChanged"/>
                     <Button x:Name="ClearSearchString_btn" Content="X" Grid.Column="3" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="20" Height="19" Click="ClearSearchString_btn_Click"/>
                     <Button x:Name="Exit_btn" Grid.ColumnSpan="2" Content="Выход" Grid.Column="5" HorizontalAlignment="Left" Margin="89,0,0,0" Grid.Row="10" VerticalAlignment="Top" Width="75" Height="29" Grid.RowSpan="2" Click="Exit_btn_Click"/>
+                    <ListView x:Name="Offer_lstv" Grid.ColumnSpan="3" Grid.Column="9" Margin="10.2,10.2,10,30" Grid.Row="1" Grid.RowSpan="9">
+                        <ListView.DataContext>
+                                <localc:BaseEquipments/>
+                            </ListView.DataContext>
+                        <ListView.View>
+                            
+                            <GridView>
+
+                                <GridViewColumn Header="Модель"  Width="200">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=FullName}" TextWrapping="Wrap" ></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Width="70">Цена</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
             <TabItem Header="Счет">
@@ -108,3 +127,4 @@
 
     </Grid>
 </Window>
+                                    

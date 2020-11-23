@@ -1,6 +1,7 @@
 ﻿using PTM2.equipment;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,14 @@ namespace PTM2
     public partial class MainWindow : Window
     {
         public BaseEquipments pr;
+        
         public static BaseEquipment s=null;
         bool changes = false;
 
         public MainWindow()
         {
             InitializeComponent();
-           
+            
             pr = (BaseEquipments)PriceListLV.DataContext; 
             this.DataContext = pr;
         }
