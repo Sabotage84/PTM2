@@ -25,6 +25,7 @@ namespace PTM2
     public partial class MainWindow : Window
     {
         public BaseEquipments pr;
+        public BaseEquipments offerL;
         
         public static BaseEquipment s=null;
         bool changes = false;
@@ -33,13 +34,14 @@ namespace PTM2
         {
             InitializeComponent();
             
-            pr = (BaseEquipments)PriceListLV.DataContext; 
+            pr = (BaseEquipments)PriceListLV.DataContext;
+            offerL = (BaseEquipments)Offer_lstv.DataContext;
             this.DataContext = pr;
         }
 
         private void AddToKP_Click(object sender, RoutedEventArgs e)
         {
-            
+            offerL.AddToOffer((BaseEquipment)PriceListLV.SelectedItem);
         }
 
         private void AddToPriceList_Click(object sender, RoutedEventArgs e)

@@ -64,13 +64,18 @@ namespace PTM2.equipment
         {
             NotifyPropertyChanged();
         }
+
+        private void offerList_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            NotifyPropertyChanged();
+        }
         internal BaseEquipments()
         {
             eqList.CollectionChanged += eqList_CollectionChanged;
-
+            offerList.CollectionChanged += offerList_CollectionChanged;
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
 
-            using (FileStream fs = new FileStream("eq.xml", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(@"C:\eq.xml", FileMode.OpenOrCreate))
             {
 
                 try
