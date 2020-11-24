@@ -19,7 +19,7 @@ namespace PTM2.equipment
     {
         ObservableCollection<BaseEquipment> eqList = new ObservableCollection<BaseEquipment>();
         ObservableCollection<BaseEquipment> defaultList = new ObservableCollection<BaseEquipment>();
-
+        ObservableCollection<BaseEquipment> offerList = new ObservableCollection<BaseEquipment>();
 
         private static readonly Lazy<BaseEquipments> lazy =
         new Lazy<BaseEquipments>(() => new BaseEquipments());
@@ -34,8 +34,8 @@ namespace PTM2.equipment
                     eqList = value;
                 }
         }
-
         public ObservableCollection<BaseEquipment> DefaultList { get => defaultList; set => defaultList = value; }
+        public ObservableCollection<BaseEquipment> OfferList { get => offerList; set => offerList = value; }
 
         public IEnumerator GetEnumerator()
         {
@@ -60,14 +60,10 @@ namespace PTM2.equipment
             EqList.Remove(item);
             DefaultList.Remove(item);
         }
-
-        
-
         private void eqList_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             NotifyPropertyChanged();
         }
-
         internal BaseEquipments()
         {
             eqList.CollectionChanged += eqList_CollectionChanged;
@@ -126,7 +122,11 @@ namespace PTM2.equipment
                 DefaultList.Add(item);
             }
         }
-
+        public void AddToOffer(BaseEquipment item)
+        {
+            if (item != null)
+                OfferList.Add(item);
+        }
         public void SearchEqByName(string searchString)
         {
             if(string.IsNullOrEmpty(searchString))
