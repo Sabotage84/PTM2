@@ -120,5 +120,10 @@ namespace PTM2
             }
             Close();
         }
+
+        private void RemoveFromOffer_btn_Click(object sender, RoutedEventArgs e)
+        {
+            offerL.RemoveFromOffer((BaseEquipment)Offer_lstv.SelectedItem);
+        }
     }
 }
