@@ -83,14 +83,14 @@
                         </ListView.View>
                     </ListView>
                     <Button x:Name="AddToKP" Content="Добавить в КП" Grid.Column="8" Grid.Row="2" VerticalAlignment="Top" Height="29" Click="AddToKP_Click" Margin="2,0,0,0"/>
-                    <Button x:Name="AddToPriceList" Content="Добавить в прайс" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="105" Click="AddToPriceList_Click" Margin="102,7.4,0,22.6" Grid.RowSpan="2"/>
-                    <Button x:Name="EditPricePosition" Grid.Column="3" Margin="95,7.4,16,0" Grid.Row="9" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29" Click="EditPricePosition_Click" Content="Редактировать" Grid.RowSpan="2"/>
-                    <Button x:Name="SavePriceList_btn" Grid.ColumnSpan="2" Content="Сохранить" Grid.Column="4" HorizontalAlignment="Right" Margin="0,7.4,5,0" Grid.Row="9" VerticalAlignment="Top" Width="110" Height="29" Click="SavePriceList_btn_Click" Grid.RowSpan="2"/>
-                    <Button x:Name="Remove_btn" Content="Удалить" Grid.Column="3" HorizontalAlignment="Left" Margin="4,7.4,0,0" Grid.Row="9" VerticalAlignment="Top" Width="86" Height="29" Click="Remove_btn_Click" Grid.RowSpan="2"/>
+                    <Button x:Name="AddToPriceList" Content="Добавить" Grid.Row="9" Click="AddToPriceList_Click" Margin="10,10.4,0,0" Grid.RowSpan="2" Grid.Column="1" Padding="1,1,5,1" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"/>
+                    <Button x:Name="EditPricePosition" Grid.Column="4" Margin="10,10.4,0,0" Grid.Row="9" VerticalAlignment="Top" Height="30" Click="EditPricePosition_Click" Content="Редактировать" Grid.RowSpan="2" Width="90" Padding="1,1,5,1" HorizontalAlignment="Left"/>
+                    <Button x:Name="SavePriceList_btn" Content="Сохранить" Grid.Column="5" HorizontalAlignment="Right" Margin="0,10.4,4,0" Grid.Row="9" VerticalAlignment="Top" Width="90" Height="30" Click="SavePriceList_btn_Click" Grid.RowSpan="2" Padding="1,1,5,1"/>
+                    <Button x:Name="Remove_btn" Content="Удалить" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10.4,0,0" Grid.Row="9" VerticalAlignment="Top" Width="90" Height="30" Click="Remove_btn_Click" Grid.RowSpan="2" Padding="1,1,5,1"/>
                     <Label x:Name="SearchEq_lbl" Content="Поиск: " HorizontalAlignment="Left" Height="29" Margin="17,0,0,0" VerticalAlignment="Top" Width="48"/>
                     <TextBox x:Name="SearchEq_txtbx" HorizontalAlignment="Left" Height="19" Margin="67,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Grid.ColumnSpan="4" TextChanged="SearchEq_txtbx_TextChanged"/>
                     <Button x:Name="ClearSearchString_btn" Content="X" Grid.Column="3" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="20" Height="19" Click="ClearSearchString_btn_Click"/>
-                    <Button x:Name="Exit_btn" Content="Выход" Grid.Column="6" HorizontalAlignment="Left" Margin="0,7.4,0,0" Grid.Row="9" VerticalAlignment="Top" Width="75" Height="29" Grid.RowSpan="2" Click="Exit_btn_Click"/>
+                    <Button x:Name="Exit_btn" Content="Выход" Grid.Column="10" HorizontalAlignment="Left" Margin="53.8,10,0,0" Grid.Row="10" VerticalAlignment="Top" Width="90" Height="29" Grid.RowSpan="2" Click="Exit_btn_Click" Grid.ColumnSpan="2"/>
                     <ListView x:Name="Offer_lstv" Grid.ColumnSpan="3" Grid.Column="9" Margin="10.2,10.2,10,30" Grid.Row="1" Grid.RowSpan="9" ItemsSource="{Binding OfferList}">
                         <ListView.DataContext>
                             <localc:BaseEquipments/>
