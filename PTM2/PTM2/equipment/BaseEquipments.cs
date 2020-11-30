@@ -20,7 +20,7 @@ namespace PTM2.equipment
         ObservableCollection<BaseEquipment> eqList = new ObservableCollection<BaseEquipment>();
         ObservableCollection<BaseEquipment> defaultList = new ObservableCollection<BaseEquipment>();
         ObservableCollection<BaseEquipment> offerList = new ObservableCollection<BaseEquipment>();
-
+        string eqFilePath;
         private static readonly Lazy<BaseEquipments> lazy =
         new Lazy<BaseEquipments>(() => new BaseEquipments());
 
@@ -36,6 +36,7 @@ namespace PTM2.equipment
         }
         public ObservableCollection<BaseEquipment> DefaultList { get => defaultList; set => defaultList = value; }
         public ObservableCollection<BaseEquipment> OfferList { get => offerList; set => offerList = value; }
+        public string EqFilePath { get => eqFilePath; set => eqFilePath = value; }
 
         public IEnumerator GetEnumerator()
         {
@@ -73,9 +74,10 @@ namespace PTM2.equipment
         {
             eqList.CollectionChanged += eqList_CollectionChanged;
             offerList.CollectionChanged += offerList_CollectionChanged;
+            EqFilePath = @"../../eq.xml";
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
 
-            using (FileStream fs = new FileStream(@"../../eq.xml", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(EqFilePath, FileMode.OpenOrCreate))
             {
 
                 try
@@ -95,7 +97,7 @@ namespace PTM2.equipment
         {
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
 
-            using (FileStream fs = new FileStream("eq.xml", FileMode.Create))
+            using (FileStream fs = new FileStream(EqFilePath, FileMode.Create))
             {
                 try
                 {
