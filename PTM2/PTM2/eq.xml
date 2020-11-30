@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ArrayOfBaseEquipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BaseEquipment>
+    <K>2</K>
+    <Description>12</Description>
+    <InPrise>2</InPrise>
+    <Price>4</Price>
+    <FullName>11</FullName>
+    <OfferNum />
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>2</ShortName>
+    <K>2</K>
+    <Description>22</Description>
+    <InPrise>22</InPrise>
+    <Price>44</Price>
+    <FullName>2</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>22221</ShortName>
+    <K>4</K>
+    <Description>23123</Description>
+    <InPrise>44</InPrise>
+    <Price>176</Price>
+    <FullName>22221</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>3331</ShortName>
+    <K>3</K>
+    <Description>13123</Description>
+    <InPrise>3</InPrise>
+    <Price>9</Price>
+    <FullName>3331</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>Сервер точного времени Метроном-300/GNS</ShortName>
+    <K>2.6505</K>
+    <Description>Приемник ГЛОНАСС/GPS, Опорный генератор TCXO NTP 2xRJ45 (10/100), 2xRS232, 1x10МГц (TTL), 1x1PPS (TTL) Питание перем 100-240 В (50/60 Гц). Металлический корпус 19",  1U/84HP (483 x 43 x 285 мм)</Description>
+    <InPrise>1981</InPrise>
+    <Price>5250.6405</Price>
+    <FullName>Сервер точного времени Метроном-300/GNS</FullName>
+  </BaseEquipment>
+</ArrayOfBaseEquipment>

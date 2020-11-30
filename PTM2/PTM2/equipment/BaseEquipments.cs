@@ -75,7 +75,7 @@ namespace PTM2.equipment
             offerList.CollectionChanged += offerList_CollectionChanged;
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
 
-            using (FileStream fs = new FileStream(@"C:\eq.xml", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(@"../../eq.xml", FileMode.OpenOrCreate))
             {
 
                 try
