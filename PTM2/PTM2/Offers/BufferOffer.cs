@@ -10,12 +10,24 @@ namespace PTM2.Offers
 {
     class BufferOffer
     {
-        public BufferOffer(ObservableCollection<BaseEquipment> offerList)
+        List<BaseEquipment> offerList = new List<BaseEquipment>();
+
+        public BufferOffer(ObservableCollection<BaseEquipment> offereq)
         {
+            OfferList = offereq.ToList();
+            BufferMessage = "";
+            foreach (var item in OfferList)
+            {
+                BufferMessage += item.FullName + "\n";
+                BufferMessage += item.Description + "\n";
+                BufferMessage += "Цена " + ((int)item.Price).ToString() + " Евро с НДС. \n";
+                BufferMessage += "\n";
+            }
 
         }
         string bufferMessage;
 
         public string BufferMessage { get => bufferMessage; set => bufferMessage = value; }
+        public List<BaseEquipment> OfferList { get => offerList; set => offerList = value; }
     }
 }

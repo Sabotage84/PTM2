@@ -1,4 +1,5 @@
 ﻿using PTM2.equipment;
+using PTM2.Offers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -124,6 +125,18 @@ namespace PTM2
         private void RemoveFromOffer_btn_Click(object sender, RoutedEventArgs e)
         {
             offerL.RemoveFromOffer((BaseEquipment)Offer_lstv.SelectedItem);
+        }
+
+        private void CopyOfferToBuf_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<BaseEquipment> tempCol = new ObservableCollection<BaseEquipment>();
+            foreach (var item in Offer_lstv.Items)
+            {
+                tempCol.Add((BaseEquipment)item);
+            }
+            BufferOffer bo = new BufferOffer(tempCol);
+            MessageBox.Show(bo.BufferMessage);
+
         }
     }
 }
