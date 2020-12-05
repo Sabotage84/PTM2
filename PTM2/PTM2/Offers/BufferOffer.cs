@@ -18,6 +18,7 @@ namespace PTM2.Offers
         public BufferOffer(ObservableCollection<BaseEquipment> offereq)
         {
             OfferList = offereq.ToList();
+            OfferList=OfferList.Distinct().ToList();
             Header = "Здравствуйте, ";
             Footer = @"Оборудование марки Метроном производит / поставляет (продает),
 обеспечивает гарантийную, постгарантийную и сервисную поддержку,
