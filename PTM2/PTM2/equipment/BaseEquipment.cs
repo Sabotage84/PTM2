@@ -15,6 +15,7 @@ namespace PTM2.equipment
         {
 
         }
+
         public string PreName { get => preName; set => preName = value; }
         public string ShortName { get => shortName; set => shortName = value; }
         public double K { get => k; set => k = value; }
@@ -23,7 +24,9 @@ namespace PTM2.equipment
         public double Price { get => price; set => price = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public string OfferNum { get => offerNum; set => offerNum = value; }
+        public TypeOfEquipment Type { get => type; set => type = value; }
 
+        TypeOfEquipment type;
         string offerNum;
         string preName;
         string shortName;
@@ -60,5 +63,18 @@ namespace PTM2.equipment
             else
                 throw new ArgumentException("Object is not a equipment");
         }
+    }
+
+    public enum TypeOfEquipment
+    {
+        STV, 
+        USCHV,
+        POVERKA,
+        ANTENNA,
+        LIGHTPROT,
+        CABEL,
+        SDU,
+        CON,
+        CLOCK
     }
 }
