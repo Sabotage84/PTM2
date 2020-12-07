@@ -15,6 +15,65 @@ namespace PTM2.equipment
         {
 
         }
+        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, TypeOfEquipment t=TypeOfEquipment.STV)
+        {
+            PreName = GetPreName(t);
+            ShortName = sName;
+            Description = discr;
+            FullName = PreName + ShortName;
+            InPrise = inPrice;
+            K = coef;
+            Price = InPrise * K;
+        }
+
+        public BaseEquipment(string sName, string discr, string offer, double price, double coef, TypeOfEquipment t=TypeOfEquipment.STV)
+        {
+            PreName = GetPreName(t);
+            ShortName = sName;
+            FullName = PreName + ShortName;
+            Description = discr;
+            InPrise = price;
+            K = coef;
+            Price = price * coef;
+        }
+
+        private string GetPreName(TypeOfEquipment t)
+        {
+            string res = "";
+            switch (t)
+            {
+                case TypeOfEquipment.STV:
+                    res = "Сервер точного времени";
+                    break;
+                case TypeOfEquipment.USCHV:
+                    res = "Устройство синхронизации частоты и времени";
+                    break;
+                case TypeOfEquipment.POVERKA:
+                    res = "";
+                    break;
+                case TypeOfEquipment.ANTENNA:
+                    res = "Антенна";
+                    break;
+                case TypeOfEquipment.LIGHTPROT:
+                    res = "Грозоразрядник";
+                    break;
+                case TypeOfEquipment.CABEL:
+                    res = "Антенный кабель";
+                    break;
+                case TypeOfEquipment.SDU:
+                    res = "Устройство синхронизации размножитель / конкертер";
+                    break;
+                case TypeOfEquipment.CON:
+                    res = "Устройство синхронизации размножитель / конкертер";
+                    break;
+                case TypeOfEquipment.CLOCK:
+                    res = "Часы";
+                    break;
+                default:
+                    break;
+            }
+            return res;
+        }
 
         public string PreName { get => preName; set => preName = value; }
         public string ShortName { get => shortName; set => shortName = value; }

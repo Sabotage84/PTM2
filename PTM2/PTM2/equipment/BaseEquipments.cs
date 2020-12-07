@@ -162,7 +162,6 @@ namespace PTM2.equipment
             }
             Sort();
         }
-
         public void RemoveFromOffer(BaseEquipment item)
         {
             if (item != null)
