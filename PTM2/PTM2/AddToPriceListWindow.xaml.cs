@@ -61,7 +61,7 @@ namespace PTM2
                 }
                 if (allRight)
                 {
-                    MainWindow.s = new Server("", sName, des, offerNum, p, k);
+                    MainWindow.s = new BaseEquipment(sName, des, offerNum, p, k);
                     Close();
                 }
             }
@@ -90,7 +90,7 @@ namespace PTM2
                 }
                 if (allRight)
                 {
-                    MainWindow.s = new Server("", sName, des, offerNum, dp, k);
+                    MainWindow.s = new BaseEquipment(sName, des, offerNum, dp, k);
                     Close();
                 }
 

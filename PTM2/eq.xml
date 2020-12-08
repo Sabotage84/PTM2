@@ -1,4 +1,56 @@
 <?xml version="1.0"?>
-<ArrayOfBaseEquipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0"?>
-<ArrayOfBaseEquipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0"?>
-<ArrayOfBaseEquipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfBaseEquipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>Антенна ГЛОНАСС/GPS Радиус-50</ShortName>
+    <K>1</K>
+    <Description>Антенна ГЛОНАСС/GPS со встроенной грозозащитой. (-45…65 С)</Description>
+    <InPrise>435</InPrise>
+    <Price>435</Price>
+    <FullName>Антенна ГЛОНАСС/GPS Радиус-50</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>Антенный кабель РК50-3-35</ShortName>
+    <K>1</K>
+    <Description>Антенный кабель (-40…70 С) 50 м.</Description>
+    <InPrise>140</InPrise>
+    <Price>140</Price>
+    <FullName>Антенный кабель РК50-3-35</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>Антенный кабель РК50-7-311</ShortName>
+    <K>1</K>
+    <Description>Низкотемпературный антенный кабель (-60…85 С) 50 м.</Description>
+    <InPrise>435</InPrise>
+    <Price>435</Price>
+    <FullName>Антенный кабель РК50-7-311</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>Сервер точного времени Метроном-200/GNS</ShortName>
+    <K>2.2948</K>
+    <Description>Компакт. исполнение ( приемник ГЛОНАСС/GPS, Ethernet 1xRJ45 NTP (10/100), опорный генератор TCXO, эл.пит. перем 100...240 В)., крепеж для 19" стойки в комплекте.</Description>
+    <InPrise>1373</InPrise>
+    <Price>3150.7604</Price>
+    <FullName>Сервер точного времени Метроном-200/GNS</FullName>
+  </BaseEquipment>
+  <BaseEquipment xsi:type="Server">
+    <PreName />
+    <ShortName>Сервер точного времени Метроном-300/GNS</ShortName>
+    <K>2.6505</K>
+    <Description>Приемник ГЛОНАСС/GPS, Опорный генератор TCXO NTP 2xRJ45 (10/100), 2xRS232, 1x10МГц (TTL), 1x1PPS (TTL) Питание перем 100-240 В (50/60 Гц). Металлический корпус 19",  1U/84HP (483 x 43 x 285 мм)</Description>
+    <InPrise>1981</InPrise>
+    <Price>5250.6405</Price>
+    <FullName>Сервер точного времени Метроном-300/GNS</FullName>
+  </BaseEquipment>
+  <BaseEquipment>
+    <K>2</K>
+    <Description> Приемник ГЛОНАСС/GPS Опорный генератор OCXO-HQ NTP 2xRJ45 (10/100), 2xRS232, 1x10МГц (TTL), 1x1PPS (TTL), Пит. перем 100-240 В (50/60 Гц). Металлический корпус 19",  1U/84HP (483 x 43 x 285 мм)</Description>
+    <InPrise>2402</InPrise>
+    <Price>4804</Price>
+    <FullName>Устройство синхронизации частоты и времени Метроном-300/GNS-HQ</FullName>
+    <OfferNum />
+  </BaseEquipment>
+</ArrayOfBaseEquipment>
