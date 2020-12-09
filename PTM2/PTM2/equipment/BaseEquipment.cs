@@ -15,9 +15,9 @@ namespace PTM2.equipment
         {
 
         }
-        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, string eqType="STV")
+        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, string eqType= "Сервер точного времени")
         {
-            PreName = GetPreName(eqType);
+            PreName = eqType;
             ShortName = sName;
             Description = discr;
             FullName = PreName + ShortName;
@@ -26,9 +26,9 @@ namespace PTM2.equipment
             Price = InPrise * K;
         }
 
-        public BaseEquipment(string sName, string discr, string offer, double price, double coef, string eqType="STV")
+        public BaseEquipment(string sName, string discr, string offer, double price, double coef, string eqType="Сервер точного времени")
         {
-            PreName = GetPreName(eqType);
+            PreName = eqType;
             ShortName = sName;
             FullName = PreName + ShortName;
             Description = discr;
@@ -36,14 +36,8 @@ namespace PTM2.equipment
             K = coef;
             Price = price * coef;
         }
-        Dictionary<string, string> typeOfEquipment = new Dictionary<string, string>();
-        private string GetPreName(string t)
-        {
-            if (TypeOfEquipment.ContainsKey(t))
-                return TypeOfEquipment[t];
-            else
-                return "";
-        }
+        
+        
 
         public string PreName { get => preName; set => preName = value; }
         public string ShortName { get => shortName; set => shortName = value; }
@@ -53,7 +47,7 @@ namespace PTM2.equipment
         public double Price { get => price; set => price = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public string OfferNum { get => offerNum; set => offerNum = value; }
-        public Dictionary<string, string> TypeOfEquipment { get => typeOfEquipment; set => typeOfEquipment = value; }
+       
 
         string offerNum;
         string preName;
