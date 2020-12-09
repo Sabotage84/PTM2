@@ -21,7 +21,8 @@ namespace PTM2.equipment
         ObservableCollection<BaseEquipment> defaultList = new ObservableCollection<BaseEquipment>();
         ObservableCollection<BaseEquipment> offerList = new ObservableCollection<BaseEquipment>();
         string eqFilePath;
-        TypeOfEquipment typeSample;
+        
+        
         private static readonly Lazy<BaseEquipments> lazy =
         new Lazy<BaseEquipments>(() => new BaseEquipments());
 
@@ -38,7 +39,7 @@ namespace PTM2.equipment
         public ObservableCollection<BaseEquipment> DefaultList { get => defaultList; set => defaultList = value; }
         public ObservableCollection<BaseEquipment> OfferList { get => offerList; set => offerList = value; }
         public string EqFilePath { get => eqFilePath; set => eqFilePath = value; }
-        public TypeOfEquipment TypeSample { get => typeSample; set => typeSample = value; }
+        
 
         public IEnumerator GetEnumerator()
         {
@@ -49,6 +50,7 @@ namespace PTM2.equipment
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
 
 
         public void ADDItem(BaseEquipment item)

@@ -15,9 +15,9 @@ namespace PTM2.equipment
         {
 
         }
-        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, TypeOfEquipment t=TypeOfEquipment.STV)
+        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, string eqType="STV")
         {
-            PreName = GetPreName(t);
+            PreName = GetPreName(eqType);
             ShortName = sName;
             Description = discr;
             FullName = PreName + ShortName;
@@ -26,9 +26,9 @@ namespace PTM2.equipment
             Price = InPrise * K;
         }
 
-        public BaseEquipment(string sName, string discr, string offer, double price, double coef, TypeOfEquipment t=TypeOfEquipment.STV)
+        public BaseEquipment(string sName, string discr, string offer, double price, double coef, string eqType="STV")
         {
-            PreName = GetPreName(t);
+            PreName = GetPreName(eqType);
             ShortName = sName;
             FullName = PreName + ShortName;
             Description = discr;
@@ -36,43 +36,13 @@ namespace PTM2.equipment
             K = coef;
             Price = price * coef;
         }
-
-        private string GetPreName(TypeOfEquipment t)
+        Dictionary<string, string> typeOfEquipment = new Dictionary<string, string>();
+        private string GetPreName(string t)
         {
-            string res = "";
-            switch (t)
-            {
-                case TypeOfEquipment.STV:
-                    res = "Сервер точного времени";
-                    break;
-                case TypeOfEquipment.USCHV:
-                    res = "Устройство синхронизации частоты и времени";
-                    break;
-                case TypeOfEquipment.POVERKA:
-                    res = "";
-                    break;
-                case TypeOfEquipment.ANTENNA:
-                    res = "Антенна";
-                    break;
-                case TypeOfEquipment.LIGHTPROT:
-                    res = "Грозоразрядник";
-                    break;
-                case TypeOfEquipment.CABEL:
-                    res = "Антенный кабель";
-                    break;
-                case TypeOfEquipment.SDU:
-                    res = "Устройство синхронизации размножитель / конкертер";
-                    break;
-                case TypeOfEquipment.CON:
-                    res = "Устройство синхронизации размножитель / конкертер";
-                    break;
-                case TypeOfEquipment.CLOCK:
-                    res = "Часы";
-                    break;
-                default:
-                    break;
-            }
-            return res;
+            if (TypeOfEquipment.ContainsKey(t))
+                return TypeOfEquipment[t];
+            else
+                return "";
         }
 
         public string PreName { get => preName; set => preName = value; }
@@ -83,9 +53,8 @@ namespace PTM2.equipment
         public double Price { get => price; set => price = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public string OfferNum { get => offerNum; set => offerNum = value; }
-        public TypeOfEquipment Type { get => type; set => type = value; }
+        public Dictionary<string, string> TypeOfEquipment { get => typeOfEquipment; set => typeOfEquipment = value; }
 
-        TypeOfEquipment type;
         string offerNum;
         string preName;
         string shortName;
@@ -122,18 +91,5 @@ namespace PTM2.equipment
             else
                 throw new ArgumentException("Object is not a equipment");
         }
-    }
-
-    public enum TypeOfEquipment
-    {
-        STV, 
-        USCHV,
-        POVERKA,
-        ANTENNA,
-        LIGHTPROT,
-        CABEL,
-        SDU,
-        CON,
-        CLOCK
     }
 }
