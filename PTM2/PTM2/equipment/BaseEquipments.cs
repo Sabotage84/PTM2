@@ -137,7 +137,7 @@ namespace PTM2.equipment
             catch
             {
 
-                MessageBox.Show("Загрузка типов неудалась!\n", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Загрузка типов неудалась!\n"+Environment.CurrentDirectory, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
 
