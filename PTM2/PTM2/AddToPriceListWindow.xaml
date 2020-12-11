@@ -31,11 +31,12 @@
         <TextBox x:Name="InPrice_txtbx" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="546,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99"/>
         <Label x:Name="koef_lbl" Content="Коэффициент" HorizontalAlignment="Left" Margin="663,64,0,0" VerticalAlignment="Top" Width="97"/>
         <TextBox x:Name="KK" HorizontalAlignment="Left" IsEnabled="False" Height="23" Margin="663,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
-        <Label x:Name="OfferNumber_lbl" Content="Offer" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.312,-0.152" Width="120"/>
-        <TextBox x:Name="OfferNumber_txtbx" HorizontalAlignment="Left" Height="23" Margin="10,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="TypeOFeq_cmbx" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=TypeOfEquipment}">
+        <Label x:Name="OfferNumber_lbl" Content="Offer" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.312,-0.152" Width="120"/>
+        <TextBox x:Name="OfferNumber_txtbx" HorizontalAlignment="Left" Height="23" Margin="10,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="TypeOFeq_cmbx" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=TypeOfEquipment}">
            
         </ComboBox>
+        <Label x:Name="TypeEq_lbl" Content="Тип оборудования" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
