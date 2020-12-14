@@ -40,7 +40,7 @@
         <Label x:Name="NewType_lbl" Content="Новый тип" HorizontalAlignment="Left" Margin="160,143,0,0" VerticalAlignment="Top" Width="95"/>
         <TextBox x:Name="NewTypeOfEq_txtbx" HorizontalAlignment="Left" Height="23" Margin="189,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" RenderTransformOrigin="0.563,0.243" IsEnabled="False"/>
         <CheckBox x:Name="NewTypeOfEq_chbx" Content="" HorizontalAlignment="Left" Margin="169,174,0,0" VerticalAlignment="Top" Height="16" Width="15" Checked="NewTypeOfEq_chbx_Checked" Unchecked="NewTypeOfEq_chbx_Unchecked"/>
-        <TextBox x:Name="NewTypeOfEqDes_txtbx" HorizontalAlignment="Left" Height="23" Margin="236,169,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="NewTypeOfEqDes_txtbx" HorizontalAlignment="Left" Height="23" Margin="236,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
 
     </Grid>
 </Window>

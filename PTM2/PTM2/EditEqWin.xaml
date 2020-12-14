@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PTM2"
+        xmlns:local="clr-namespace:PTM2" xmlns:equipment="clr-namespace:PTM2.equipment"
         mc:Ignorable="d"
-        Title="EditEqWin" Height="193.656" Width="840.298">
-    <Grid x:Name="Edit_grid">
+        Title="EditEqWin" Height="266.277" Width="840.298">
+    <Window.DataContext>
+        <equipment:BaseEquipments/>
+    </Window.DataContext>
+    <Grid x:Name="Edit_grid" Margin="0,0,-0.4,-1">
         <Label x:Name="EditName_lbl" Content="Название" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.212,0.002"/>
         <TextBox x:Name="EditName_txtbl" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="EditOffer_lbl" Content="Offer" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="120"/>
@@ -21,6 +24,7 @@
         <TextBox x:Name="EditPrice_txtbx" HorizontalAlignment="Left" Height="23" Margin="720,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" TextChanged="EditPrice_txtbx_TextChanged"/>
         <Button x:Name="SaveEdit_btn" Content="Сохранить" HorizontalAlignment="Left" Margin="619,133,0,0" VerticalAlignment="Top" Width="75" Click="SaveEdit_btn_Click"/>
         <Button x:Name="CancelEdit_btn" Content="Отмена" HorizontalAlignment="Left" Margin="720,133,0,0" VerticalAlignment="Top" Width="75" Click="CancelEdit_btn_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Width="102" ItemsSource="{Binding Path=TypeOfEquipment.Keys}"/>
 
     </Grid>
 </Window>
