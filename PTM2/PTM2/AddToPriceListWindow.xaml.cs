@@ -131,5 +131,18 @@ namespace PTM2
             MainWindow.s = null;
             Close();
         }
+
+        private void NewTypeOfEq_chbx_Checked(object sender, RoutedEventArgs e)
+        {
+            TypeOFeq_cmbx.IsEnabled = false;
+            NewTypeOfEq_txtbx.IsEnabled = true;
+        }
+
+        private void NewTypeOfEq_chbx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            NewTypeOfEq_txtbx.Text = string.Empty;
+            NewTypeOfEq_txtbx.IsEnabled = false;
+            TypeOFeq_cmbx.IsEnabled = true;
+        }
     }
 }
