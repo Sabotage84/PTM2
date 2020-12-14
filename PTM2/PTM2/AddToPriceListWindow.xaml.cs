@@ -88,9 +88,29 @@ namespace PTM2
                     KK.BorderBrush = Brushes.Red;
                     allRight = false;
                 }
+                string type1="STV", type2="Сервер точного времени";
+                if (NewTypeOfEq_chbx.IsChecked == false)
+                {
+                    if (string.IsNullOrEmpty(TypeOFeq_cmbx.SelectedItem.ToString()))
+                    {
+                        allRight = false;
+                        MessageBox.Show("Неверный тип оборудования!");
+                    }
+                    else
+                    {
+                        type1 = TypeOFeq_cmbx.SelectedItem.ToString();
+                        type2 = beq.TypeOfEquipment[type1];
+                    }
+                }
+                else
+                {
+                    beq.TypeOfEquipment.Add(NewTypeOfEq_txtbx.Text, NewTypeOfEqDes_txtbx.Text);
+                    type1 = NewTypeOfEq_txtbx.Text;
+                    type2 = beq.TypeOfEquipment[type1];
+                }
                 if (allRight)
                 {
-                    MainWindow.s = new BaseEquipment(sName, des, offerNum, dp, k);
+                    MainWindow.s = new BaseEquipment(sName, des, offerNum, dp, k, type2, type1);
                     Close();
                 }
 
@@ -136,12 +156,15 @@ namespace PTM2
         {
             TypeOFeq_cmbx.IsEnabled = false;
             NewTypeOfEq_txtbx.IsEnabled = true;
+            NewTypeOfEqDes_txtbx.IsEnabled = true;
         }
 
         private void NewTypeOfEq_chbx_Unchecked(object sender, RoutedEventArgs e)
         {
             NewTypeOfEq_txtbx.Text = string.Empty;
             NewTypeOfEq_txtbx.IsEnabled = false;
+            NewTypeOfEqDes_txtbx.Text = string.Empty;
+            NewTypeOfEqDes_txtbx.IsEnabled = false;
             TypeOFeq_cmbx.IsEnabled = true;
         }
     }

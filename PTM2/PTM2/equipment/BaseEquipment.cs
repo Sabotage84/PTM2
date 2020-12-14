@@ -15,7 +15,7 @@ namespace PTM2.equipment
         {
 
         }
-        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, string eqType= "Сервер точного времени")
+        public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, string eqType= "Сервер точного времени", string sType="STV")
         {
             PreName = eqType;
             ShortName = sName;
@@ -24,9 +24,9 @@ namespace PTM2.equipment
             InPrise = inPrice;
             K = coef;
             Price = InPrise * K;
+            ShortType = sType;
         }
-
-        public BaseEquipment(string sName, string discr, string offer, double price, double coef, string eqType="Сервер точного времени")
+        public BaseEquipment(string sName, string discr, string offer, double price, double coef, string eqType="Сервер точного времени", string sType = "STV")
         {
             PreName = eqType;
             ShortName = sName;
@@ -35,10 +35,8 @@ namespace PTM2.equipment
             InPrise = price;
             K = coef;
             Price = price * coef;
+            ShortType = sType;
         }
-        
-        
-
         public string PreName { get => preName; set => preName = value; }
         public string ShortName { get => shortName; set => shortName = value; }
         public double K { get => k; set => k = value; }
@@ -47,7 +45,7 @@ namespace PTM2.equipment
         public double Price { get => price; set => price = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public string OfferNum { get => offerNum; set => offerNum = value; }
-       
+        public string ShortType { get => shortType; set => shortType = value; }
 
         string offerNum;
         string preName;
@@ -57,6 +55,8 @@ namespace PTM2.equipment
         double k;
         double price;
         string description;
+        string shortType;
+
         public override bool Equals(object obj)
         {
             if(obj.GetType() != GetType()) return false;
@@ -64,7 +64,6 @@ namespace PTM2.equipment
             BaseEquipment item = (BaseEquipment)obj;
             return (item.FullName==FullName);
         }
-
         public override int GetHashCode()
         {
             var hashCode = 1327208659;
@@ -74,7 +73,6 @@ namespace PTM2.equipment
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(description);
             return hashCode;
         }
-
         public int CompareTo(object obj)
         {
             if (obj == null) return 1;

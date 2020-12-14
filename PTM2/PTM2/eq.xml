@@ -46,11 +46,29 @@
     <FullName>Сервер точного времени Метроном-300/GNS</FullName>
   </BaseEquipment>
   <BaseEquipment>
+    <PreName>Сервер точного времени</PreName>
+    <ShortName>Метроном-300/GNS</ShortName>
+    <K>2.6</K>
+    <Description>Metr</Description>
+    <InPrise>2000</InPrise>
+    <Price>5200</Price>
+    <FullName>Сервер точного времениМетроном-300/GNS</FullName>
+  </BaseEquipment>
+  <BaseEquipment>
     <K>2</K>
     <Description> Приемник ГЛОНАСС/GPS Опорный генератор OCXO-HQ NTP 2xRJ45 (10/100), 2xRS232, 1x10МГц (TTL), 1x1PPS (TTL), Пит. перем 100-240 В (50/60 Гц). Металлический корпус 19",  1U/84HP (483 x 43 x 285 мм)</Description>
     <InPrise>2402</InPrise>
     <Price>4804</Price>
     <FullName>Устройство синхронизации частоты и времени Метроном-300/GNS-HQ</FullName>
     <OfferNum />
+  </BaseEquipment>
+  <BaseEquipment>
+    <PreName>Устройство</PreName>
+    <ShortName>Метроном-300/GNS-HQ/AD10</ShortName>
+    <K>2.7</K>
+    <Description>ad10</Description>
+    <InPrise>2500</InPrise>
+    <Price>6750</Price>
+    <FullName>УстройствоМетроном-300/GNS-HQ/AD10</FullName>
   </BaseEquipment>
 </ArrayOfBaseEquipment>
