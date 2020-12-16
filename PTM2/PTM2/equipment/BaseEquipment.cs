@@ -17,7 +17,7 @@ namespace PTM2.equipment
         }
         public BaseEquipment(string sName, string discr, string offer, int inPrice, double coef = 2.6, string eqType= "Сервер точного времени", string sType="STV")
         {
-            PreName = eqType;
+            PreName = eqType+" ";
             ShortName = sName;
             Description = discr;
             FullName = PreName + ShortName;
@@ -28,7 +28,7 @@ namespace PTM2.equipment
         }
         public BaseEquipment(string sName, string discr, string offer, double price, double coef, string eqType="Сервер точного времени", string sType = "STV")
         {
-            PreName = eqType;
+            PreName = eqType+" ";
             ShortName = sName;
             FullName = PreName + ShortName;
             Description = discr;

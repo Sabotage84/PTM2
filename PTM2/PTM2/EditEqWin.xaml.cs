@@ -22,7 +22,7 @@ namespace PTM2
     
     public partial class EditEqWin : Window
     {
-        
+        BaseEquipments be = new BaseEquipments();
         public EditEqWin(BaseEquipment item)
         {
             InitializeComponent();
@@ -34,6 +34,11 @@ namespace PTM2
                 EditOffer_txtbx.Text = item.OfferNum;
                 EditInPrice_txtbx.Text = item.InPrise.ToString();
                 EditDescr_txtbx.Text = item.Description;
+                foreach (var t in be.TypeOfEquipment.Keys)
+                {
+                    if (t == item.ShortType)
+                        EditTypeOfEq_cbx.SelectedItem = t;
+                }
             }
 
         }
@@ -45,6 +50,7 @@ namespace PTM2
             t.Description = EditDescr_txtbx.Text;
             t.FullName = EditName_txtbl.Text;
             t.OfferNum = EditOffer_txtbx.Text;
+            t.ShortType = EditTypeOfEq_cbx.SelectedItem.ToString();
             try
             {
                 t.InPrise = double.Parse(EditInPrice_txtbx.Text);

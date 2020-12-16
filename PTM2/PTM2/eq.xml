@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <ArrayOfBaseEquipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <BaseEquipment xsi:type="Server">
-    <PreName />
-    <ShortName>Антенна ГЛОНАСС/GPS Радиус-50</ShortName>
+  <BaseEquipment>
     <K>1</K>
     <Description>Антенна ГЛОНАСС/GPS со встроенной грозозащитой. (-45…65 С)</Description>
     <InPrise>435</InPrise>
     <Price>435</Price>
     <FullName>Антенна ГЛОНАСС/GPS Радиус-50</FullName>
+    <OfferNum />
+    <ShortType>ANT</ShortType>
   </BaseEquipment>
   <BaseEquipment xsi:type="Server">
     <PreName />
@@ -53,6 +53,16 @@
     <InPrise>2000</InPrise>
     <Price>5200</Price>
     <FullName>Сервер точного времениМетроном-300/GNS</FullName>
+  </BaseEquipment>
+  <BaseEquipment>
+    <PreName>Устройство </PreName>
+    <ShortName>Метроном-1000</ShortName>
+    <K>3.1</K>
+    <Description>1000</Description>
+    <InPrise>9000</InPrise>
+    <Price>27900</Price>
+    <FullName>Устройство Метроном-1000</FullName>
+    <ShortType>USCHV</ShortType>
   </BaseEquipment>
   <BaseEquipment>
     <K>2</K>
