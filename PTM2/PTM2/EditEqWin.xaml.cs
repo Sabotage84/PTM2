@@ -97,8 +97,6 @@ namespace PTM2
             CalculatePrice();
         }
 
-        
-
         private void EditK_txtbx_TextChanged(object sender, TextChangedEventArgs e)
         {
             CalculatePrice();

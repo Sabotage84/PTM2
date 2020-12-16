@@ -69,9 +69,9 @@ http://www.ptime.ru/Metronom/si/Metronom300si.html
         private string CreateOfferFromList(List<BaseEquipment> lst)
         {
             string res = "";
+            
             foreach (var item in lst)
             {
-
                 res += item.FullName + "\n";
                 res += item.Description + "\n";
                 res += "Цена " + ((int)item.Price).ToString() + " Евро с НДС. \n";
