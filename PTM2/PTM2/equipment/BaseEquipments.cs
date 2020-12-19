@@ -143,6 +143,35 @@ namespace PTM2.equipment
 
         }
 
+        internal void PositionDownInOffer(BaseEquipment selectedItem)
+        {
+            ObservableCollection<BaseEquipment> tempOfferList = new ObservableCollection<BaseEquipment>();
+            bool f = false;
+            BaseEquipment t = new BaseEquipment();
+            foreach (var item in OfferList)
+            {
+                if (item == selectedItem)
+                {
+                    t = item;
+                    f = true;
+                }
+                else
+                {
+                    tempOfferList.Add(item);
+                    if (f)
+                    {
+                        tempOfferList.Add(t);
+                        f = false;
+                    }
+                }
+            }
+            OfferList.Clear();
+            foreach (var item in tempOfferList)
+            {
+                OfferList.Add(item);
+            }
+        }
+
         internal void PositionUpInOffer(BaseEquipment selectedItem)
         {
             ObservableCollection<BaseEquipment> tempOfferList = new ObservableCollection<BaseEquipment>();

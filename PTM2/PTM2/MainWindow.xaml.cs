@@ -146,5 +146,13 @@ namespace PTM2
                 offerL.PositionUpInOffer((BaseEquipment)Offer_lstv.SelectedItem);
             }
         }
+
+        private void PositionDown_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Offer_lstv.SelectedItem != null && Offer_lstv.SelectedIndex < Offer_lstv.Items.Count-1)
+            {
+                offerL.PositionDownInOffer((BaseEquipment)Offer_lstv.SelectedItem);
+            }
+        }
     }
 }
