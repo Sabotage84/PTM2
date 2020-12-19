@@ -138,5 +138,13 @@ namespace PTM2
             MessageBox.Show(bo.BufferMessage);
 
         }
+
+        private void PositionUp_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Offer_lstv.SelectedItem!=null && Offer_lstv.SelectedIndex>0)
+            {
+                offerL.PositionUpInOffer((BaseEquipment)Offer_lstv.SelectedItem);
+            }
+        }
     }
 }

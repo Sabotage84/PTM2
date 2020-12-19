@@ -143,6 +143,30 @@ namespace PTM2.equipment
 
         }
 
+        internal void PositionUpInOffer(BaseEquipment selectedItem)
+        {
+            ObservableCollection<BaseEquipment> tempOfferList = new ObservableCollection<BaseEquipment>();
+            foreach (var item in OfferList)
+            {
+                if(item==selectedItem)
+                {
+                    BaseEquipment t = tempOfferList.Last();
+                    tempOfferList.Remove(tempOfferList.Last());
+                    tempOfferList.Add(item);
+                    tempOfferList.Add(t);
+                }
+                else
+                {
+                    tempOfferList.Add(item);
+                }
+            }
+            OfferList.Clear();
+            foreach (var item in tempOfferList)
+            {
+                OfferList.Add(item);
+            }
+        }
+
         public void SevePriceList()
         {
             XmlSerializer formatter = new XmlSerializer(typeof(ObservableCollection<BaseEquipment>));
