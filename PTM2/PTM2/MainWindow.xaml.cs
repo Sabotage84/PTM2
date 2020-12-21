@@ -143,7 +143,9 @@ namespace PTM2
         {
             if (Offer_lstv.SelectedItem!=null && Offer_lstv.SelectedIndex>0)
             {
+                int t = Offer_lstv.SelectedIndex;
                 offerL.PositionUpInOffer((BaseEquipment)Offer_lstv.SelectedItem);
+                Offer_lstv.SelectedIndex = t - 1;
             }
         }
 
@@ -151,7 +153,9 @@ namespace PTM2
         {
             if (Offer_lstv.SelectedItem != null && Offer_lstv.SelectedIndex < Offer_lstv.Items.Count-1)
             {
+                int t = Offer_lstv.SelectedIndex;
                 offerL.PositionDownInOffer((BaseEquipment)Offer_lstv.SelectedItem);
+                Offer_lstv.SelectedIndex = t + 1;
             }
         }
     }
