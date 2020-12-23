@@ -1,10 +1,12 @@
 ﻿using PTM2.equipment;
+using PTM2.ExcelHelper;
 using PTM2.Offers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,6 +32,7 @@ namespace PTM2
         
         public static BaseEquipment s=null;
         bool changes = false;
+        private string kpFilePath;
 
         public MainWindow()
         {
@@ -38,6 +41,7 @@ namespace PTM2
             pr = (BaseEquipments)PriceListLV.DataContext;
             offerL = (BaseEquipments)Offer_lstv.DataContext;
             this.DataContext = pr;
+            kpFilePath = @"C:\kp.xls";
         }
 
         private void AddToKP_Click(object sender, RoutedEventArgs e)
@@ -157,6 +161,14 @@ namespace PTM2
                 offerL.PositionDownInOffer((BaseEquipment)Offer_lstv.SelectedItem);
                 Offer_lstv.SelectedIndex = t + 1;
             }
+        }
+
+        private void CreateOffer_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelProvider ex = new ExcelProvider();
+            ex.OpenExcelFile(kpFilePath, true);
+            Thread.Sleep(10000);
+            ex.CloseWithoutSaving();
         }
     }
 }

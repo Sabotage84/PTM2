@@ -63,9 +63,9 @@ namespace PTM2.ExcelHelper
                     EXsheets = EXappworkbook.Worksheets;
                     EXworksheet = (Excel.Worksheet)EXsheets.get_Item(1);
                 }
-                catch
+                catch(Exception e)
                 {
-                    MessageBox.Show("Не удалось открыть файл: " + fileName);
+                    MessageBox.Show("Не удалось открыть файл: " + fileName+"\n"+e.Message);
                 }
             }
             else
@@ -115,7 +115,6 @@ namespace PTM2.ExcelHelper
             }
         }
 
-
         public void WriteTOcell(string CellNumber, string value, int Fsize = 10, string Fname = "Arial", bool FBold = false, bool borders = false)
         {
 
@@ -154,7 +153,6 @@ namespace PTM2.ExcelHelper
             EXcells.Font.Bold = FBold;
             EXcells.Value2 = value;
         }
-
         public void WriteTOcell(string CellNumber, string value, string note)
         {
 
