@@ -167,7 +167,7 @@ namespace PTM2
         {
             ExcelProvider ex = new ExcelProvider();
             ex.OpenExcelFile(kpFilePath, true);
-            Thread.Sleep(10000);
+            ex.WriteTOcell("F11", DateTime.Today.ToString(), "");
             ex.CloseWithoutSaving();
         }
     }
